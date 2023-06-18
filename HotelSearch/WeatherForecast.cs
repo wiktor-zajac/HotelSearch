@@ -1,4 +1,4 @@
-namespace HotelSearch
+namespace WebAPI
 {
     public class WeatherForecast
     {
