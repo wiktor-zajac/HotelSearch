@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Core.Hotel
+﻿namespace Domain.Core.Hotel
 {
     public class HotelEmployee
     {
-        public Guid Id { get; private set; } = Guid.NewGuid();
+        public Guid Id { get; } = Guid.NewGuid();
         public Guid HotelId { get; private set; } = Guid.Empty;
         public HashSet<HotelRights> Rights { get; private set; } = new();
 

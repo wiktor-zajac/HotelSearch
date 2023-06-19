@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <Folder Include="Core\" />
 	  <Folder Include="Generic\" />
-	  <Folder Include="Supporting\" />
   </ItemGroup>
 
 </Project>

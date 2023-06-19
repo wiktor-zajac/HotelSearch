@@ -1,4 +1,4 @@
-﻿namespace Domain.Core;
+﻿namespace Domain.Supporting.Order;
 
 public enum PaymentStatus
 {

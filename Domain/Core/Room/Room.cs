@@ -1,8 +1,10 @@
-﻿namespace Domain.Core.Room
+﻿using Domain.SharedKernel;
+
+namespace Domain.Core.Room
 {
     internal class Room
     {
-        public Guid Id { get; private set; } = Guid.NewGuid();
+        public Guid Id { get; } = Guid.NewGuid();
         public Guid HotelId { get; private set; } = Guid.Empty;
         public string Name { get; private set; } = string.Empty;
         public Money Price { get; private set; } = Money.Zero;
