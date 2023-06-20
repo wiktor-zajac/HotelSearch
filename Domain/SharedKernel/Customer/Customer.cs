@@ -34,7 +34,9 @@
         private static bool CheckIfCustomerIsUnderAge(DateOnly value)
             => value.AddYears(MinimumAgeInYears) > DateOnly.FromDateTime(DateTime.Now);
 
+#pragma warning disable CS8618
         public Customer(Guid id, string name, DateOnly birthDate)
+#pragma warning restore CS8618
         {
             Id = id;
             Name = name;
