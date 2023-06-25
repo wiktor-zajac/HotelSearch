@@ -1,20 +1,22 @@
-﻿namespace Domain.SharedKernel.Customer
+﻿using Domain.SharedKernel.Customer.Exceptions;
+
+namespace Domain.SharedKernel.Customer
 {
-    public class Customer
+    public class CustomerAggregate
     {
         private const int MinimalNameLength = 3;
         private const int MinimumAgeInYears = 18;
 
-        public Guid Id { get; }
+        public Guid Id { get; init; }
 
-        private string _name;
+        private string _name = String.Empty;
         public string Name
         {
             get => _name;
             set
             {
                 if (value.Length < MinimalNameLength)
-                    throw new CustomerNameIsTooShort();
+                    throw new CustomerNameIsTooShortException();
                 _name = value;
             }
         }
@@ -34,9 +36,7 @@
         private static bool CheckIfCustomerIsUnderAge(DateOnly value)
             => value.AddYears(MinimumAgeInYears) > DateOnly.FromDateTime(DateTime.Now);
 
-#pragma warning disable CS8618
-        public Customer(Guid id, string name, DateOnly birthDate)
-#pragma warning restore CS8618
+        public CustomerAggregate(Guid id, string name, DateOnly birthDate)
         {
             Id = id;
             Name = name;
