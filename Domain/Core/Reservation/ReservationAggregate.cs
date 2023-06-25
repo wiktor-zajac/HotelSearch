@@ -1,15 +1,17 @@
-﻿namespace Domain.Core.Reservation
-{
-    public class Reservation
-    {
-        
-        public Guid Id { get; } = Guid.NewGuid();
-        public Guid RoomId { get; } = Guid.Empty;
-        public Guid OrderId { get; } = Guid.Empty;
-        public Guid CustomerId { get; } = Guid.Empty;
-        public DateTime ReservationStart { get; set; } = DateTime.Now;
+﻿using Domain.Core.Reservation.Exceptions;
 
-        private DateTime _reservationEnd = DateTime.Now;
+namespace Domain.Core.Reservation
+{
+    public class ReservationAggregate
+    {
+
+        public Guid Id { get; init; }
+        public Guid RoomId { get; init; }
+        public Guid OrderId { get; init; }
+        public Guid CustomerId { get; init; }
+        public DateTime ReservationStart { get; set; }
+
+        private DateTime _reservationEnd;
         public DateTime ReservationEnd
         {
             get => _reservationEnd;
@@ -21,8 +23,7 @@
             }
         }
 
-        public Reservation() { }
-        public Reservation(Guid id, Guid roomId, Guid orderId, Guid customerId, DateTime reservationStart, DateTime reservationEnd)
+        public ReservationAggregate(Guid id, Guid roomId, Guid orderId, Guid customerId, DateTime reservationStart, DateTime reservationEnd)
         {
             Id = id;
             RoomId = roomId;

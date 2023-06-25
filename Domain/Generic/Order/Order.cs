@@ -1,19 +1,33 @@
 ﻿using Domain.SharedKernel;
+using Domain.Generic.Contact;
 
 namespace Domain.Generic.Order
 {
     public class Order
     {
-        public Guid Id { get; } = Guid.NewGuid();
-        public Money Price { get; private set; } = Money.Zero;
-        public PaymentStatus PaymentStatus { get; private set; } = PaymentStatus.AwaitingPayment;
-        public DateTime OrderPlaced { get; } = DateTime.Now;
+        public Guid Id { get; init; }
+        public Money Price { get; set; }
+        public string RecipientName { get; set; }
+        public ContactDetails RecipientContactDetails { get; set; }
+        public PaymentStatus PaymentStatus { get; set; }
+        public DateTime OrderPlaced { get; init; }
 
-        public Order() { }
-        public Order(Guid id, Money price, PaymentStatus paymentStatus, DateTime orderPlaced)
+
+        public Order(Guid id, Money price, string recipientName, ContactDetails recipientContactDetails)
         {
             Id = id;
             Price = price;
+            RecipientName = recipientName;
+            RecipientContactDetails = recipientContactDetails;
+            PaymentStatus = PaymentStatus.AwaitingPayment;
+            OrderPlaced = DateTime.Now;
+        }
+        public Order(Guid id, Money price, string recipientName, ContactDetails recipientContactDetails, PaymentStatus paymentStatus, DateTime orderPlaced)
+        {
+            Id = id;
+            Price = price;
+            RecipientName = recipientName;
+            RecipientContactDetails = recipientContactDetails;
             PaymentStatus = paymentStatus;
             OrderPlaced = orderPlaced;
         }

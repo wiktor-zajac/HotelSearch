@@ -2,9 +2,9 @@
 {
     public record Money
     {
-        private string Currency { get; set; } = "PLN";
-        private string Value { get; set; } = "0";
+        public string Currency { get; set; } = "PLN";
+        public string Value { get; set; } = "0";
 
-        public static Money Zero = new();
+        public static readonly Money Zero = new();
     }
 }
