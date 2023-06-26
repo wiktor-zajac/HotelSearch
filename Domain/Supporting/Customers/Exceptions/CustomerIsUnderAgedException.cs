@@ -1,4 +1,4 @@
-﻿namespace Domain.SharedKernel.Customer.Exceptions
+﻿namespace Domain.Supporting.Customers.Exceptions
 {
     internal class CustomerIsUnderAgedException : Exception
     {

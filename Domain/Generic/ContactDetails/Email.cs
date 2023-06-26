@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Domain.Generic.Contact.Exceptions;
 
-namespace Domain.Generic.Contact
+namespace Domain.Generic.ContactDetails
 {
     public record Email
     {

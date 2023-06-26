@@ -1,15 +1,15 @@
-﻿using Domain.SharedKernel.Customer.Exceptions;
+﻿using Domain.Supporting.Customers.Exceptions;
 
-namespace Domain.SharedKernel.Customer
+namespace Domain.Supporting.Customers
 {
-    public class CustomerAggregate
+    public class Customer
     {
         private const int MinimalNameLength = 3;
         private const int MinimumAgeInYears = 18;
 
         public Guid Id { get; init; }
 
-        private string _name = String.Empty;
+        private string _name = string.Empty;
         public string Name
         {
             get => _name;
@@ -36,7 +36,7 @@ namespace Domain.SharedKernel.Customer
         private static bool CheckIfCustomerIsUnderAge(DateOnly value)
             => value.AddYears(MinimumAgeInYears) > DateOnly.FromDateTime(DateTime.Now);
 
-        public CustomerAggregate(Guid id, string name, DateOnly birthDate)
+        public Customer(Guid id, string name, DateOnly birthDate)
         {
             Id = id;
             Name = name;

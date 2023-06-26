@@ -1,8 +1,8 @@
 ﻿using Domain.SharedKernel;
 
-namespace Domain.Core.Room
+namespace Domain.Core.Rooms
 {
-    internal class RoomAggregate
+    internal class Room
     {
         public Guid Id { get; init; }
         public Guid HotelId { get; init; }
@@ -10,7 +10,7 @@ namespace Domain.Core.Room
         public Money Price { get; set; }
         public HashSet<RoomFeature> Features { get; init; }
 
-        public RoomAggregate(Guid id, Guid hotelId, string name, Money price, HashSet<RoomFeature> features)
+        public Room(Guid id, Guid hotelId, string name, Money price, HashSet<RoomFeature> features)
         {
             Id = id;
             HotelId = hotelId;

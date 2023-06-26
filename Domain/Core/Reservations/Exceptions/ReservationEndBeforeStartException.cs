@@ -1,4 +1,4 @@
-﻿namespace Domain.Core.Reservation.Exceptions
+﻿namespace Domain.Core.Reservations.Exceptions
 {
     internal class ReservationEndBeforeStartException : Exception
     {

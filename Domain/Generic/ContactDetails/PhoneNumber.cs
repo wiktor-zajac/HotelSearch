@@ -1,7 +1,7 @@
 ﻿using Domain.Generic.Contact.Exceptions;
 using PhoneNumbers;
 
-namespace Domain.Generic.Contact
+namespace Domain.Generic.ContactDetails
 {
     public record PhoneNumber
     {

@@ -1,4 +1,4 @@
-﻿namespace Domain.Core.Hotel;
+﻿namespace Domain.Core.Hotels;
 
 public enum HotelStars
 {
